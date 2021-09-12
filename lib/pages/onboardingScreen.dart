@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kidmoz/modals/constants.dart';
 import 'package:kidmoz/modals/data.dart';
@@ -44,27 +45,30 @@ class _OnboardingState extends State<Onboarding> {
               },
               itemBuilder: (_, i) {
                 return Padding(
-                  padding: const EdgeInsets.all(40),
+                  padding: const EdgeInsets.all(20),
                   child: Column(
                     children: [
                       Image.asset(
                         contents[i].image,
                         height: 400,
                       ),
-                      CircularPercentIndicator(
-                        radius: 120,
-                        animation: true,
-                        lineWidth: 8,
-                        animationDuration: 800,
-                        circularStrokeCap: CircularStrokeCap.round,
-                        percent: (i + 1) / (contents.length),
-                        progressColor: MyTheme.lightBlue,
-                        center: Container(
-                          width: 70,
-                          height: 70,
-                          child: Image.asset(
-                            contents[i].title,
-                            height: 400,
+                      Center(
+                        child: CircularPercentIndicator(
+                          radius: 120,
+                          animation: true,
+                          lineWidth: 6,
+                          backgroundColor: Colors.transparent,
+                          animationDuration: 800,
+                          circularStrokeCap: CircularStrokeCap.round,
+                          percent: (i + 1) / (contents.length),
+                          progressColor: MyTheme.lightBlue,
+                          center: Container(
+                            width: 70,
+                            height: 70,
+                            child: Image.asset(
+                              contents[i].title,
+                              height: 400,
+                            ),
                           ),
                         ),
                       ),
@@ -103,7 +107,7 @@ class _OnboardingState extends State<Onboarding> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
                   gradient: LinearGradient(
-                      colors: [MyTheme.fadeBlue, MyTheme.lightBlue])),
+                      colors: [MyTheme.lightBlue, MyTheme.fadeBlue])),
               child: GestureDetector(
                 onTap: () {
                   if (currentIndex == contents.length - 1) {
@@ -119,13 +123,35 @@ class _OnboardingState extends State<Onboarding> {
                     curve: Curves.easeInOut,
                   );
                 },
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      currentIndex == contents.length - 1 ? "Continue" : "Next",
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(
+                      CupertinoIcons.right_chevron,
+                      color: Colors.transparent,
                     ),
-                  ),
+                    SizedBox(
+                      width: 80,
+                    ),
+                    Container(
+                      child: Center(
+                        child: Text(
+                          currentIndex == contents.length - 1
+                              ? "Continue"
+                              : "Next",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 80,
+                    ),
+                    Icon(
+                      CupertinoIcons.right_chevron,
+                      color: Colors.white,
+                      size: 25,
+                    )
+                  ],
                 ),
               ),
             ),
@@ -138,11 +164,11 @@ class _OnboardingState extends State<Onboarding> {
   AnimatedContainer buildDot(int index, BuildContext context) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 250),
-      height: 10,
-      width: currentIndex == index ? 25 : 10,
+      height: 7,
+      width: currentIndex == index ? 30 : 8,
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
         color: MyTheme.lightBlue,
       ),
     );

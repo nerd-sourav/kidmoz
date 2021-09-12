@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => Onboarding(),
+        '/': (context) => LoginScreen(),
         MyRoutes.onboardingRout: (context) => Onboarding(),
         MyRoutes.loginRoute: (context) => LoginScreen(),
         MyRoutes.homeRoute: (context) => SignUpScreen(),

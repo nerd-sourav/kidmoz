@@ -18,7 +18,7 @@ List<OnboardingContent> contents = [
       title: 'assets/images/logo.png',
       image: 'assets/images/two.jpeg',
       description:
-          "simply dummy text of thes printing and typesetting industry. Lorem Ipsum has been the "
+          "simply dummy text of the  printing and typesetting industry. Lorem Ipsum has been the "
           "industry's standard dummy text ever since the 1500s, "),
   OnboardingContent(
       title: 'assets/images/logo.png',
