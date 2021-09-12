@@ -71,6 +71,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
+              Text("----------------- Or sign up with -----------------",
+                  style: TextStyle(fontFamily: 'Roboto', letterSpacing: 1)),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -81,13 +84,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   BottomLogo(imageLocation: "assets/images/twitter.png"),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account?"),
-                  Text(" Sign in here",
-                      style: TextStyle(color: MyTheme.fadeBlue)),
+                  Text(
+                    "Already have an account?",
+                    style: TextStyle(fontFamily: 'Roboto', letterSpacing: 1),
+                  ),
+                  Text(
+                    " Sign in here",
+                    style: TextStyle(
+                        color: MyTheme.fadeBlue,
+                        fontFamily: 'Roboto',
+                        letterSpacing: 1),
+                  ),
                 ],
               )
             ],
