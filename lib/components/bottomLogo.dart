@@ -10,12 +10,14 @@ class BottomLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Stack(
       children: [
         Container(
           padding: EdgeInsets.all(10),
-          width: 50,
-          height: 50,
+          width: size.width / 7,
+          height: size.height / 14,
           child: Image.asset(imageLocation),
           decoration: BoxDecoration(
               color: Colors.white,
@@ -24,7 +26,7 @@ class BottomLogo extends StatelessWidget {
                 BoxShadow(
                     color: MyTheme.lightBlue,
                     offset: Offset(4.0, 4.0),
-                    blurRadius: 15.0,
+                    blurRadius: 8.0,
                     spreadRadius: 1.0),
                 BoxShadow(
                     color: Colors.white,
