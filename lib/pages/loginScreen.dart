@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
 import 'package:kidmoz/components/bottomLogo.dart';
+import 'package:kidmoz/components/signupButtons.dart';
 import 'package:kidmoz/modals/constants.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(25),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -25,30 +27,24 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: size.width / 4,
                 child: Image.asset("assets/images/logo.png"),
               ),
-              AnimatedContainer(
-                duration: Duration(milliseconds: 1),
-                height: 50,
-                margin: EdgeInsets.all(40),
-                width: size.width / 3,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30.0),
-                    gradient: LinearGradient(
-                      colors: [MyTheme.lightBlue, MyTheme.fadeBlue],
-                    ),
-                  ),
-                  child: Center(
-                      child: Text("Login",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Roboto',
-                              fontSize: 18,
-                              letterSpacing: 2))),
-                ),
+              SizedBox(height: 25),
+              Text(
+                "Welcome Back!",
+                style: TextStyle(
+                    fontFamily: 'Roboto', fontSize: 40, letterSpacing: 1),
+              ),
+              Text(
+                "Login to your account",
+                style: TextStyle(
+                    fontFamily: 'Roboto', fontSize: 15, letterSpacing: 1),
+              ),
+              SignUpButtons(
+                size: size,
+                buttonText: "Login",
               ),
               Text("----------------- Or sign up with -----------------",
                   style: TextStyle(fontFamily: 'Roboto', letterSpacing: 1)),
-              SizedBox(height: 20),
+              SizedBox(height: 25),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -59,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   BottomLogo(imageLocation: "assets/images/twitter.png"),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 25),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
