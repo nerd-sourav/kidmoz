@@ -16,8 +16,8 @@ class BottomLogo extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.all(10),
-          width: size.width / 7,
-          height: size.height / 14,
+          width: size.height / 20,
+          height: size.height / 20,
           child: Image.asset(imageLocation),
           decoration: BoxDecoration(
               color: Colors.white,

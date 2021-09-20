@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter/rendering.dart';
-
 import 'package:kidmoz/components/bottomText.dart';
 import 'package:kidmoz/components/signupButtons.dart';
-import 'package:kidmoz/components/textField.dart';
-import 'package:kidmoz/modals/constants.dart';
-import 'package:kidmoz/pages/signupScreen.dart';
+import 'package:kidmoz/pages/loginScreen.dart';
 
-class CreateScreen extends StatefulWidget {
-  const CreateScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
-  _CreateScreenState createState() => _CreateScreenState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _CreateScreenState extends State<CreateScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -32,20 +27,19 @@ class _CreateScreenState extends State<CreateScreen> {
               ),
               SizedBox(height: 25),
               Text(
-                "Welcome Back!",
+                "Welcome!",
                 style: TextStyle(
                     fontFamily: 'Roboto',
                     fontSize: size.height / 20,
                     letterSpacing: 1),
               ),
               Text(
-                "Login to your account",
+                "Create your account",
                 style: TextStyle(
                     fontFamily: 'Roboto',
                     fontSize: size.height / 50,
                     letterSpacing: 1),
               ),
-              CustomTextField(),
               SignUpButtons(
                 size: size,
                 buttonText: "Continue",
@@ -55,12 +49,12 @@ class _CreateScreenState extends State<CreateScreen> {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignUpScreen()));
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
                 },
                 child: AlreadyText(
                   size: size,
-                  text1: "Don't have an account?",
-                  text2: "Sign up here",
+                  text1: "Already have an account?",
+                  text2: "Sign in here",
                 ),
               )
             ],
