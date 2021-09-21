@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
 import 'package:kidmoz/components/bottomLogo.dart';
 import 'package:kidmoz/components/bottomText.dart';
 import 'package:kidmoz/components/signupButtons.dart';
 import 'package:kidmoz/components/textField.dart';
-import 'package:kidmoz/modals/constants.dart';
+import 'package:kidmoz/pages/createAccount.dart';
 import 'package:kidmoz/pages/signupScreen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -21,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Container(
           padding: EdgeInsets.only(bottom: 10),
           child: Column(
@@ -28,30 +28,62 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 5,
+                height: MediaQuery.of(context).size.height / 3.2,
                 child: Stack(
-                  alignment: Alignment.topRight,
+                  alignment: Alignment.center,
                   children: [
                     Positioned(
                       top: 0,
                       right: 0,
                       child: Container(
-                        width: size.width / 3,
+                        width: size.width / 2.3,
                         child: Image.asset("assets/images/bigCircle.png"),
                       ),
                     ),
                     Positioned(
-                      bottom: 0,
+                      top: 0,
+                      left: 0,
+                      child: Container(
+                        width: size.width / 2.2,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: 30,
+                              top: 28,
+                              child: Container(
+                                  height: 50,
+                                  width: 50,
+                                  child: Image.asset(
+                                      "assets/images/smallCircle.png")),
+                            ),
+                            Image.asset("assets/images/arc.png"),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 5,
+                      left: 30,
                       child: Container(
                         alignment: Alignment.center,
                         width: size.width / 4,
-                        child: Image.asset("assets/images/logo.png"),
+                        child: Image.asset("assets/images/semicircle.png"),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      child: Center(
+                        child: Container(
+                          width: size.width / 4,
+                          child: Image.asset("assets/images/logo.png"),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+
+              //SizedBox(height: 10),
               Text(
                 "Welcome Back!",
                 style: TextStyle(
@@ -66,8 +98,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontSize: size.height / 60,
                     letterSpacing: 1),
               ),
-              CustomTextField(),
-              CustomTextField(),
+              CustomTextField(
+                hintText: "Username",
+                iconString: Icons.person_outline_outlined,
+              ),
+              CustomTextField(
+                hintText: "Password",
+                iconString: Icons.lock_outline_rounded,
+              ),
+
               SignUpButtons(
                 size: size,
                 buttonText: "Login",
@@ -92,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignUpScreen()));
+                      MaterialPageRoute(builder: (context) => CreateScreen()));
                 },
                 child: AlreadyText(
                   size: size,

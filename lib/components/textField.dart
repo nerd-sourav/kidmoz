@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:kidmoz/modals/constants.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     Key? key,
+    required this.hintText,
+    required this.iconString,
   }) : super(key: key);
-  // final String hintText;
-  // final String iconString;
+  final String hintText;
+  final IconData iconString;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,8 +40,8 @@ class CustomTextField extends StatelessWidget {
             ),
             padding: EdgeInsets.only(left: 90),
             child: TextField(
-              decoration: InputDecoration(
-                  border: InputBorder.none, hintText: "Username"),
+              decoration:
+                  InputDecoration(border: InputBorder.none, hintText: hintText),
             ),
           ),
           Positioned(
@@ -64,8 +67,8 @@ class CustomTextField extends StatelessWidget {
                         spreadRadius: 1.0),
                   ],
                 ),
-                child: const Icon(
-                  Icons.person_outline_sharp,
+                child: Icon(
+                  iconString,
                   size: 35,
                 )),
           ),

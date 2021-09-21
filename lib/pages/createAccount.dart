@@ -5,7 +5,6 @@ import 'package:flutter/rendering.dart';
 import 'package:kidmoz/components/bottomText.dart';
 import 'package:kidmoz/components/signupButtons.dart';
 import 'package:kidmoz/components/textField.dart';
-import 'package:kidmoz/modals/constants.dart';
 import 'package:kidmoz/pages/signupScreen.dart';
 
 class CreateScreen extends StatefulWidget {
@@ -21,14 +20,71 @@ class _CreateScreenState extends State<CreateScreen> {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Container(
-          padding: EdgeInsets.all(25),
+          padding: EdgeInsets.only(bottom: 10),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                width: size.width / 4,
-                child: Image.asset("assets/images/logo.png"),
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 3.2,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Positioned(
+                      top: 0,
+                      right: 0,
+                      child: Container(
+                        width: size.width / 2.3,
+                        child: Image.asset("assets/images/bigCircle.png"),
+                      ),
+                    ),
+                    Positioned(
+                      top: -20,
+                      left: 30,
+                      child: RotatedBox(
+                        quarterTurns: 3,
+                        child: Container(
+                          width: size.width / 2.2,
+                          child: Container(
+                              height: 50,
+                              width: 50,
+                              child:
+                                  Image.asset("assets/images/semicircle.png")),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 5,
+                      left: 30,
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: size.width / 4,
+                        child: Image.asset("assets/images/semicircle.png"),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      child: Center(
+                        child: Container(
+                          width: size.width / 4,
+                          child: Image.asset("assets/images/logo.png"),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      right: 40,
+                      child: Center(
+                        child: Container(
+                          width: size.width / 10,
+                          child: Image.asset("assets/images/smallCircle.png"),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(height: 25),
               Text(
@@ -45,13 +101,22 @@ class _CreateScreenState extends State<CreateScreen> {
                     fontSize: size.height / 50,
                     letterSpacing: 1),
               ),
-              CustomTextField(),
-              SignUpButtons(
-                size: size,
-                buttonText: "Continue",
+              CustomTextField(
+                hintText: "Username",
+                iconString: Icons.person_outlined,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignUpScreen()));
+                },
+                child: SignUpButtons(
+                  size: size,
+                  buttonText: "Continue",
+                ),
               ),
               SizedBox(height: 25),
-              SizedBox(height: 25),
+              SizedBox(height: 150),
               InkWell(
                 onTap: () {
                   Navigator.push(context,
