@@ -33,23 +33,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   alignment: Alignment.center,
                   children: [
                     Positioned(
-                      top: 0,
-                      right: 0,
+                      top: -230,
+                      right: -70,
                       child: Container(
-                        width: size.width / 2.3,
+                        width: size.width / 1,
                         child: Image.asset("assets/images/bigCircle.png"),
                       ),
                     ),
                     Positioned(
-                      top: 0,
-                      left: 0,
+                      top: -85,
+                      left: -85,
                       child: Container(
-                        width: size.width / 2.2,
+                        width: size.width / 1.5,
                         child: Stack(
                           children: [
                             Positioned(
-                              left: 30,
-                              top: 28,
+                              left: 110,
+                              top: 110,
                               child: Container(
                                   height: 50,
                                   width: 50,
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Positioned(
                       bottom: 5,
-                      left: 30,
+                      left: 22,
                       child: Container(
                         alignment: Alignment.center,
                         width: size.width / 4,

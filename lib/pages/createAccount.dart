@@ -33,10 +33,10 @@ class _CreateScreenState extends State<CreateScreen> {
                   alignment: Alignment.center,
                   children: [
                     Positioned(
-                      top: 0,
-                      right: 0,
+                      top: -230,
+                      right: -70,
                       child: Container(
-                        width: size.width / 2.3,
+                        width: size.width / 1,
                         child: Image.asset("assets/images/bigCircle.png"),
                       ),
                     ),

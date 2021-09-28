@@ -13,7 +13,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 5, left: 5, right: 5),
+      padding: const EdgeInsets.only(top: 0, left: 5, right: 5),
       height: 100,
       child: Stack(
         alignment: AlignmentDirectional.centerStart,
@@ -21,7 +21,7 @@ class CustomTextField extends StatelessWidget {
           Container(
             height: 50,
             alignment: Alignment.centerLeft,
-            width: MediaQuery.of(context).size.width - 50,
+            width: MediaQuery.of(context).size.width - 120,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(30),
@@ -67,9 +67,12 @@ class CustomTextField extends StatelessWidget {
                         spreadRadius: 1.0),
                   ],
                 ),
-                child: Icon(
-                  iconString,
-                  size: 35,
+                child: Center(
+                  child: Icon(
+                    iconString,
+                    size: 35,
+                    color: MyTheme.fadeBlue,
+                  ),
                 )),
           ),
         ],

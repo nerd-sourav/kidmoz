@@ -16,12 +16,12 @@ class SignUpButtons extends StatelessWidget {
       duration: Duration(milliseconds: 1),
       height: 40,
       margin: EdgeInsets.only(top: 5, bottom: 20),
-      width: size.width / 2,
+      width: size.width / 1.7,
       child: DecoratedBox(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30.0),
             gradient: LinearGradient(
-              colors: [MyTheme.lightBlue, MyTheme.fadeBlue],
+              colors: [MyTheme.darkBlue, MyTheme.skyBlue],
             ),
             boxShadow: [
               BoxShadow(
