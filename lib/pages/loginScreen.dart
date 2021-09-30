@@ -5,7 +5,6 @@ import 'package:kidmoz/components/bottomText.dart';
 import 'package:kidmoz/components/signupButtons.dart';
 import 'package:kidmoz/components/textField.dart';
 import 'package:kidmoz/pages/createAccount.dart';
-import 'package:kidmoz/pages/signupScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
